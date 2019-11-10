@@ -13,11 +13,12 @@ import {Provider} from 'react-redux'
 import ReactIntro from "./pages/ReactIntro";
 import {persistor, store} from './store'
 import {PersistGate} from "redux-persist/integration/react";
+import {Spinner} from "./components/Spinner";
 
 const App = () => {
   return (
     <Provider store={store}>
-        <PersistGate persistor={persistor}>
+        <PersistGate loading={<Spinner/>} persistor={persistor}>
             <ReactIntro/>
         </PersistGate>
     </Provider>

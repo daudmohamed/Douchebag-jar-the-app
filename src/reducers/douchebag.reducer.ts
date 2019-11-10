@@ -1,22 +1,27 @@
-import {DoucheBagState} from "../types/douchebag.types";
-import {ActionType, getType} from 'typesafe-actions';
-// @ts-ignore
-import * as actions from '../actions';
-import {INTRODUCTION_FINISHED} from "../actions/douchebag.action";
-
-type DouchebagActions = ActionType<typeof actions>;
+import { DoucheBagState } from "../types/douchebag.types";
+import {InitDouchebag, IntroductionFinished} from "../actions/douchebag.action";
+import { ActionReducer } from "./Reducer";
 
 const INITIAL_STATE: DoucheBagState = {
 	introDone: false
 };
 
+const reduceIntroductionFinished: ActionReducer<DoucheBagState, IntroductionFinished> = (state, action) => ({
+	...state,
+	introDone: action.introDone
+});
+
+
+type DouchebagActions = InitDouchebag | IntroductionFinished;
+
 const reducer = (state: DoucheBagState = INITIAL_STATE, action: DouchebagActions) => {
 	switch (action.type) {
-		case getType(INTRODUCTION_FINISHED()):
+		case InitDouchebag.type:
 			return {
-				...state,
-				introDone: action.payload.introDone
+				...INITIAL_STATE
 			};
+		case IntroductionFinished.type:
+			return reduceIntroductionFinished(state, action as IntroductionFinished);
 		default:
 			return state;
 	}
