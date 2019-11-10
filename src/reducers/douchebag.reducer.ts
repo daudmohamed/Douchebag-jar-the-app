@@ -8,7 +8,7 @@ const INITIAL_STATE: DoucheBagState = {
 
 const reduceIntroductionFinished: ActionReducer<DoucheBagState, IntroductionFinished> = (state, action) => ({
 	...state,
-	introDone: action.introDone
+	introDone: true
 });
 
 
