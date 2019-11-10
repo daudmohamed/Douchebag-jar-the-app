@@ -10,9 +10,8 @@ export const InitDouchebag = (): InitDouchebag => ({
 InitDouchebag.type = InitDoucheBagType;
 
 const IntroductionFinishedType = nameSpace+'INTRODUCTION_FINISHED';
-export type IntroductionFinished = Action<typeof IntroductionFinishedType, { introDone: boolean }>;
-export const IntroductionFinished = (introDone: boolean): IntroductionFinished => ({
+export type IntroductionFinished = Action<typeof IntroductionFinishedType, {}>;
+export const IntroductionFinished = (): IntroductionFinished => ({
 	type: IntroductionFinishedType,
-	introDone
 });
 IntroductionFinished.type = IntroductionFinishedType;
