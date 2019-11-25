@@ -25,6 +25,16 @@ import {
 	DebugInstructions,
 	ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import Amplify from 'aws-amplify';
+import { withAuthenticator } from 'aws-amplify-react-native'; // or 'aws-amplify-react-native';
+// @ts-ignore
+import awsconfig from '../aws-exports';
+
+Amplify.configure(awsconfig);
+
+const signUpConfig = {
+	defaultCountryCode: '47'
+};
 
 const ReactIntro = () => {
 	const usingHermes = typeof HermesInternal === 'object' && HermesInternal !== null;
@@ -114,4 +124,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default ReactIntro;
+export default withAuthenticator(ReactIntro, true,[], null, null, signUpConfig);

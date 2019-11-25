@@ -1,0 +1,28 @@
+type Group
+@model
+@auth(rules: [
+	# Defaults to use the "owner" field.
+	{ allow: owner },
+
+	# Authorize the update mutation and both queries. Use `queries: null` to disable auth for queries.
+	{ allow: owner, ownerField: "members", identityClaim: "email", operations: [read] }
+
+]){
+	id: ID!
+	title: String!
+	description: String!
+	owner: String
+	members: [String]
+}
+
+type UserTab
+@model
+@auth(rules: [
+	{allow: owner}
+	{ allow: owner, ownerField: "groupMembers", operations: [read] }
+]){
+	id: ID!
+	amount: Int!
+	owner: String
+	groupMembers: [String]
+}

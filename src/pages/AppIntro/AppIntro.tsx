@@ -8,6 +8,7 @@ import { IntroductionFinished } from "../../actions/douchebag.action";
 import ReactIntro from "../ReactIntro";
 
 
+
 const slides: Array<IntroSlidesItem> = [
 	{
 		key: 'Doucherbag Jar',
