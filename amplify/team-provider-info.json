@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "dbjapp-dev-20191123181107-authRole",
+            "UnauthRoleArn": "arn:aws:iam::124523898468:role/dbjapp-dev-20191123181107-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::124523898468:role/dbjapp-dev-20191123181107-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "dbjapp-dev-20191123181107-deployment",
+            "UnauthRoleName": "dbjapp-dev-20191123181107-unauthRole",
+            "StackName": "dbjapp-dev-20191123181107",
+            "StackId": "arn:aws:cloudformation:eu-west-1:124523898468:stack/dbjapp-dev-20191123181107/3d3b9070-0e14-11ea-ae4e-02f0c9b42810"
+        },
+        "categories": {
+            "auth": {
+                "dbjapp02cb1bc4": {}
+            }
+        }
+    }
+}
